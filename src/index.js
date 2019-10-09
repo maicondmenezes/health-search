@@ -6,6 +6,7 @@ import About from './container/About';
 import Categories from './container/Categories';
 import Home from './container/Home';
 import Profiles from './container/Profiles';
+import ProfileForm from './ui/ProfileForm';
 import * as serviceWorker from './serviceWorker';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Route path='/Categories' component={Categories} />
             <Route path='/Home' component={Home} />
             <Route path='/Profiles' component={Profiles} />
+            <Route path='/ProfileForm' component={ProfileForm} />
         </ Route >
     </ Router>
     ,
