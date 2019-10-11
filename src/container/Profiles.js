@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'; 
 import ProfileCard from '../ui/ProfileCard';
-import ProfileForm from '../ui/ProfileForm';
+import Grid, { GridSpacing } from '@material-ui/core/Grid';
 export default class Home extends Component {
     constructor(props){
         super();
@@ -25,19 +25,34 @@ export default class Home extends Component {
     render(){
         const {profilesData} = this.state;
         return(
-            <div className="container text-center">
-                {profilesData.map((profile) => (
-                    <div className="row" key={profile.id} >
-                       <ProfileCard
-                            photo = {profile.User.profileImg}
-                            name = {profile.User.name}
-                            bio = {profile.Specialization.name}
-                            action = {() => alert('Perfil Completo em construção')}
-                            txtBtn = "Perfil Completo"
-                        />
-                    </div>
-                ))}
-            </div>            
+            <Grid container className="flexGrow:1" spacing={2}>
+                <Grid item xs={12}>
+                    <Grid container justify="center" spacing={2}>
+                        {profilesData.map((profile) => (
+                            <Grid key={profile.id} item>
+                                <ProfileCard
+                                    services = {profile.Services}
+                                    name = {profile.User.name}
+                                    specializationName = {profile.Specialization.name}
+                                    profileImg = {profile.User.profileImg}
+                                    description = {profile.description}
+                                    cr = {profile.cr}
+                                    phoneNumber = {profile.User.phoneNumber}
+                                    email = {profile.User.email}
+                                    addressLink = {profile.addressLink}
+                                    addressName = {profile.addressName}
+                                    addressNumber = {profile.addressNumber}
+                                    addressComplement = {profile.addressComplement}
+                                    cep = {profile.cep}
+                                    district = {profile.district}
+                                    city = {profile.city}
+                                    state = {profile.state}
+                                />
+                            </Grid>
+                        ))}
+                    </Grid>            
+                </Grid>
+            </Grid>
         )      
     }
 }
