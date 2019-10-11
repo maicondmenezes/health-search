@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Profiles from './container/Profiles';
-//import App from './App';
+import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Profiles />, document.getElementById('root'));
+ReactDOM.render(<App /> , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
